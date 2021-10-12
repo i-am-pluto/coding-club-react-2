@@ -1,0 +1,101 @@
+.textAlign {
+  text-align: center;
+}
+.center {
+  margin-left: auto;
+  margin-left: 200px;
+  display: block;
+  width: 50%;
+}
+
+.flipcard {
+  background-color: transparent;
+  width: 240px;
+  height: 240px;
+  /* margin-right: 10px; */
+  perspective: 1000px;
+}
+.inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(58, 51, 51, 0.2);
+}
+.flipcard:hover .inner {
+  transform: rotateY(180deg);
+}
+.front,
+.back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+}
+/* .front{
+    background-color:#bbb;
+    color: black;
+} */
+.back {
+  background-color: white;
+  transform: rotateY(180deg);
+}
+
+#callender {
+  /* font-size: 2px; */
+  text-align: center;
+  display: grid;
+  height: auto;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  /* height: 100%; */
+  /* width: 100%; */
+  border-color: #d1e7dd;
+  border-width: 1px;
+  border-style: solid;
+}
+.day {
+  border: 2px #a8ddc5;
+  border-style: double;
+  width: 100%;
+  height: 100%;
+}
+.today {
+  background-color: #698d7d;
+  color: white;
+}
+.weekday {
+  background-color: #d1e7dd;
+  font-weight: bold;
+  margin: 2px;
+  border: 2px #a8ddc5;
+  border-style: double;
+  width: 100%;
+  height: 100%;
+
+  /* padding: 0px; */
+  /* width: 100%; */
+  /* display:table-row; */
+}
+thead {
+  width: 100%;
+}
+.overlay {
+  position: absolute;
+  display: none;
+  width: 465px;
+  height: 300px;
+  background-color: #d1e7dd;
+  cursor: pointer;
+  color: #175739;
+  /* text-align: center; */
+}
+.alerts {
+  display: flex;
+}
+.back {
+  text-align: left;
+  font-size: 0.7em;
+}
