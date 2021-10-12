@@ -3,7 +3,6 @@ import ReactDOMServer from "react-dom/server";
 class Callender extends React.Component {
   constructor(props) {
     super(props);
-
     this.state = {
       display: "none",
     };
@@ -64,20 +63,6 @@ class Callender extends React.Component {
         </div>
       );
     }
-    // var buts = document.getElementsByClassName("day");
-    // for (var i = 0; i < buts.length; i++) {
-    //   buts[i].addEventListener("click", function () {
-    //     var temp = "ov" + this.id.slice(3);
-    //     document.getElementById(temp).style.display = "block";
-    //   });
-    // }
-    // var ovs = document.getElementsByClassName("overlay");
-    // for (var i = 0; i < ovs.length; i++) {
-    //   ovs[i].addEventListener("click", function () {
-    //     this.style.display = "none";
-    //   });
-    // }
-    // console.log(callender_elements);
     return callender_elements;
   }
 

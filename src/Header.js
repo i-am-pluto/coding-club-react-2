@@ -1,11 +1,21 @@
 import React from "react";
 
-function Header() {
+function Header({ active }) {
+  let home = "nav-link";
+  let problemset = "nav-link";
+  let profile = "nav-link";
+  if (active == 1) home += " active";
+  else if (active == 2) problemset += " active";
+  else if (active == 3) profile += " active";
   return (
     <div>
       <nav
-        className="navbar navbar-light navbar-expand-md navigation-clean-search"
-        style={{ background: "rgb(209,231,221)", color: "rgb(42,81,50)" }}
+        className="container-fluid navbar navbar-light navbar-expand-md navigation-clean-search"
+        style={{
+          background: "rgb(209,231,221)",
+          color: "rgb(42,81,50)",
+          width: "100%",
+        }}
       >
         <div className="container">
           <a className="navbar-brand" href="#">
@@ -22,17 +32,17 @@ function Header() {
           <div className="collapse navbar-collapse" id="navcol-1">
             <ul className="navbar-nav">
               <li className="nav-item">
-                <a className="nav-link active" href="#">
+                <a className={home} href="/home">
                   Home
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="problemset">
+                <a className={problemset} href="problemset">
                   Problem Set
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
+                <a className={profile} href="#">
                   Profile
                 </a>
               </li>

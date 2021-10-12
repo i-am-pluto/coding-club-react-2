@@ -5,45 +5,6 @@ import py from "./assets/img/python-and-flask-free-udemy-course.jpg";
 import suc from "./assets/img/success.png";
 import Callender from "./Callender";
 
-// var callender = document.getElementById("callender");
-// var date = new Date();
-// console.log(date.getFullYear());
-// [y, m, d] = [date.getFullYear(), date.getMonth(), date.getDate()];
-// console.log(1);
-// var numOfDays = new Date(y, m + 1, 0).getDate();
-// var surplus = new Date(y, m, 1).getDay();
-// for (var i = 0; i < surplus; i++)
-//   callender.insertAdjacentHTML("beforeend", `<div class=""></div>`);
-// for (var i = 1; i <= numOfDays; i++) {
-//   if (i == d)
-//     callender.insertAdjacentHTML(
-//       "beforeend",
-//       `<div class="day today btn btn-outline-secondary" id="day${i}">${i}</div>`
-//     );
-//   else
-//     callender.insertAdjacentHTML(
-//       "beforeend",
-//       `<div class="day btn btn-outline-secondary" id="day${i}">${i}</div>`
-//     );
-//   callender.insertAdjacentHTML(
-//     "beforeend",
-//     `<div class="container overlay btn btn-outline-success" id="ov${i}"><h2>Upcoming Contest</h2></div>`
-//   );
-// }
-// var buts = document.getElementsByClassName("day");
-// for (var i = 0; i < buts.length; i++) {
-//   buts[i].addEventListener("click", function () {
-//     var temp = "ov" + this.id.slice(3);
-//     document.getElementById(temp).style.display = "block";
-//   });
-// }
-// var ovs = document.getElementsByClassName("overlay");
-// for (var i = 0; i < ovs.length; i++) {
-//   ovs[i].addEventListener("click", function () {
-//     this.style.display = "none";
-//   });
-// }
-
 function Home() {
   return (
     <div>
@@ -65,8 +26,8 @@ function Home() {
                     className="align-items-center"
                     style={{
                       width: "187px",
-                      marginTop: "22px",
                       height: "187px",
+                      marginTop: "22px",
                     }}
                     src={coding}
                   />
@@ -75,7 +36,7 @@ function Home() {
                   </p>
                 </div>
                 <div className="back">
-                  <div className="card">
+                  <div className="">
                     <img src={py} className="card-img-top" alt="" />
                     <div className="card-body">
                       <h4 className="card-title" style={{ textAlign: "left" }}>
@@ -119,7 +80,7 @@ function Home() {
                   </p>
                 </div>
                 <div className="back">
-                  <div className="card">
+                  <div className="">
                     <img src={py} className="card-img-top" alt="" />
                     <div className="card-body">
                       <h4 className="card-title" style={{ textAlign: "left" }}>
@@ -163,7 +124,7 @@ function Home() {
                   </p>
                 </div>
                 <div className="back">
-                  <div className="card">
+                  <div className="">
                     <img src={py} className="card-img-top" alt="" />
                     <div className="card-body">
                       <h4 className="card-title" style={{ textAlign: "left" }}>
