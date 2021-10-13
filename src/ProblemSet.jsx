@@ -18,7 +18,7 @@ class ProblemSet extends React.Component {
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet qui ea, tempora quo voluptate dignissimos est reprehenderit porro fugit sit. Doloribus velit delectus fugiat aliquam id earum a mollitia. Aliquam.",
       example: [
         { input: "[2,3,5,1,23,4,5,2]", output: "POSSIBLE" },
-        { input: "[2,3,5,1,23,4,5,2]", output: "POSSIBLE" }
+        { input: "[2,3,5,1,23,4,5,2]", output: "POSSIBLE" },
       ],
     };
     var object2 = {
@@ -30,7 +30,7 @@ class ProblemSet extends React.Component {
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet qui ea, tempora quo voluptate dignissimos est reprehenderit porro fugit sit. Doloribus velit delectus fugiat aliquam id earum a mollitia. Aliquam.",
       example: [
         { input: "[2,3,5,1,23,4,5,2]", output: "POSSIBLE" },
-        { input: "[2,3,5,1,23,4,5,2]", output: "POSSIBLE" }
+        { input: "[2,3,5,1,23,4,5,2]", output: "POSSIBLE" },
       ],
     };
     var object3 = {
@@ -42,7 +42,7 @@ class ProblemSet extends React.Component {
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet qui ea, tempora quo voluptate dignissimos est reprehenderit porro fugit sit. Doloribus velit delectus fugiat aliquam id earum a mollitia. Aliquam.",
       example: [
         { input: "[2,3,5,1,23,4,5,2]", output: "POSSIBLE" },
-        { input: "[2,3,5,1,23,4,5,2]", output: "POSSIBLE" }
+        { input: "[2,3,5,1,23,4,5,2]", output: "POSSIBLE" },
       ],
     };
     var object4 = {
@@ -54,7 +54,7 @@ class ProblemSet extends React.Component {
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet qui ea, tempora quo voluptate dignissimos est reprehenderit porro fugit sit. Doloribus velit delectus fugiat aliquam id earum a mollitia. Aliquam.",
       example: [
         { input: "[2,3,5,1,23,4,5,2]", output: "POSSIBLE" },
-        { input: "[2,3,5,1,23,4,5,2]", output: "POSSIBLE" }
+        { input: "[2,3,5,1,23,4,5,2]", output: "POSSIBLE" },
       ],
     };
     var object5 = {
@@ -66,7 +66,7 @@ class ProblemSet extends React.Component {
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet qui ea, tempora quo voluptate dignissimos est reprehenderit porro fugit sit. Doloribus velit delectus fugiat aliquam id earum a mollitia. Aliquam.",
       example: [
         { input: "[2,3,5,1,23,4,5,2]", output: "POSSIBLE" },
-        { input: "[2,3,5,1,23,4,5,2]", output: "POSSIBLE" }
+        { input: "[2,3,5,1,23,4,5,2]", output: "POSSIBLE" },
       ],
     };
     var object6 = {
@@ -78,7 +78,7 @@ class ProblemSet extends React.Component {
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet qui ea, tempora quo voluptate dignissimos est reprehenderit porro fugit sit. Doloribus velit delectus fugiat aliquam id earum a mollitia. Aliquam.",
       example: [
         { input: "[2,3,5,1,23,4,5,2]", output: "POSSIBLE" },
-        { input: "[2,3,5,1,23,4,5,2]", output: "POSSIBLE" }
+        { input: "[2,3,5,1,23,4,5,2]", output: "POSSIBLE" },
       ],
     };
     var object7 = {
@@ -90,7 +90,7 @@ class ProblemSet extends React.Component {
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet qui ea, tempora quo voluptate dignissimos est reprehenderit porro fugit sit. Doloribus velit delectus fugiat aliquam id earum a mollitia. Aliquam.",
       example: [
         { input: "[2,3,5,1,23,4,5,2]", output: "POSSIBLE" },
-        { input: "[2,3,5,1,23,4,5,2]", output: "POSSIBLE" }
+        { input: "[2,3,5,1,23,4,5,2]", output: "POSSIBLE" },
       ],
     };
 
@@ -107,6 +107,7 @@ class ProblemSet extends React.Component {
       let t = (
         <Route exact path={"/000" + problems[i].sno} key={i}>
           {/* <Header active={0} /> */}
+          <Header active={0} />
           <Problem
             sno={problems[i].sno}
             name={problems[i].name}
@@ -124,8 +125,10 @@ class ProblemSet extends React.Component {
       <Router>
         <Switch>
           {route}
+
           <Route exact path="/problemset">
             {/* <Header /> */}
+            <Header active={2} />
             <div>
               <div className="container">
                 <ProblemSetHeader2 />

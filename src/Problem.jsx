@@ -1,6 +1,11 @@
 import React, { Component } from "react";
 import divide from "./assets/img/—Pngtree—proportional thick straight line_5487827.png";
+// import Monacoeditor from "./Monacoeditor";
+import AceEditor from "react-ace";
 import "./problem.css";
+import TextEditor from "./TextEditor";
+import "ace-builds/src-noconflict/mode-text";
+import "ace-builds/src-noconflict/theme-kuroir";
 class Problem extends React.Component {
   constructor(props) {
     super(props);
@@ -121,7 +126,11 @@ class Problem extends React.Component {
           >
             {/* <img src={divide} className alt="" /> */}
           </div>
-          <div className="col-md-4" id="right"></div>
+          <div className="col-md-4" id="right">
+            {/* <Monacoeditor/> */}
+            
+            <TextEditor />
+          </div>
         </div>
         <div
           className="row"

@@ -32,7 +32,7 @@ function App() {
           <Route exact path="/learning"></Route>
           <Route exact path="/blog"></Route>
           <Route exact path="/problemset">
-            <Header active={2} />
+            
             <ProblemSet />
             <Footer />
           </Route>

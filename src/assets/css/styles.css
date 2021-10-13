@@ -99,3 +99,7 @@ thead {
   text-align: left;
   font-size: 0.7em;
 }
+#Editor {
+  height: 100%;
+  width:100%;
+}
