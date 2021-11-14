@@ -1,5 +1,8 @@
 import React from "react";
-
+import Login from "./login_Signup/Login";
+import Signup from "./login_Signup/signup";
+import "./Header.css";
+import { useState } from "react";
 function Header({ active }) {
   let home = "nav-link";
   let problemset = "nav-link";
@@ -7,6 +10,28 @@ function Header({ active }) {
   if (active == 1) home += " active";
   else if (active == 2) problemset += " active";
   else if (active == 3) profile += " active";
+
+  let [displayL, setDisplayL] = useState("none");
+  let [displayS, setDisplayS] = useState("none");
+
+  function onLogin(e) {
+    e.preventDefault();
+    // console.log("something");
+    if (displayL === "none") {
+      // console.log("sometihne2321");
+      setDisplayL("block");
+    } else setDisplayL("none");
+  }
+
+  function onSignup(e) {
+    e.preventDefault();
+    // console.log("something");
+    if (displayL === "none") {
+      // console.log("sometihne2321");
+      setDisplayS("block");
+    } else setDisplayS("none");
+  }
+
   return (
     <div>
       <nav
@@ -37,12 +62,12 @@ function Header({ active }) {
                 </a>
               </li>
               <li className="nav-item">
-                <a className={problemset} href="problemset">
+                <a className={problemset} href="/problemset">
                   Problem Set
                 </a>
               </li>
               <li className="nav-item">
-                <a className={profile} href="#">
+                <a className={profile} href="/">
                   Profile
                 </a>
               </li>
@@ -74,15 +99,55 @@ d-flex mb-0"
                 margin: "0px",
                 "margin-right": "6px",
               }}
+              onClick={onSignup}
             >
-              Sign/up
+              Sign up
             </button>
-            <a className="btn btn-light action-button" role="button" href="#">
+            <button className="btn btn-light action-button" onClick={onLogin}>
               login
-            </a>
+            </button>
           </div>
         </div>
       </nav>
+      <div className="o" style={{ display: displayL }}>
+        <div className="bigBox">
+          <div className="box" style={{ border: "10px solid darkgreen" }}>
+            <h2 className="navbar-brand">Coding Club</h2>
+            <hr
+              style={{
+                marginLeft: "-20px",
+                marginRight: "-20px",
+                backgroundColor: "black",
+                height: "3px",
+              }}
+            />
+            <br />
+            <Login />
+          </div>
+        </div>
+        {/* <p>Hello</p> */}
+      </div>
+      <div className="o" style={{ display: displayS }}>
+        {/* <signup /> */}
+        <div className="bigBox">
+          <div
+            className="box"
+            style={{ border: "10px solid darkgreen", height: "450px" }}
+          >
+            <h2 className="navbar-brand">Coding Club</h2>
+            <hr
+              style={{
+                marginLeft: "-20px",
+                marginRight: "-20px",
+                backgroundColor: "black",
+                height: "3px",
+              }}
+            />
+            <br />
+            <Signup />
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

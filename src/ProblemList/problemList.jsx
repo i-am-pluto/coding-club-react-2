@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-import sortButton from "./assets/img/sort-arrows-couple-pointing-up-and-down.png";
-import ListItem from "./ListItem";
-import "./problemList.css";
+import sortButton from "../assets/img/sort-arrows-couple-pointing-up-and-down.png";
+import ListItem from "../problemPage/ListItem";
 class ProblemList extends React.Component {
   constructor(props) {
     super(props);

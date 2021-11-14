@@ -83,10 +83,7 @@ class Callender extends React.Component {
             <div className="weekday btn ">Fri</div>
             <div className="weekday btn ">Sat</div>
             {this.generateCallender()}
-            {/* {console.log(this.generateCallender())} */}
           </div>
-
-          {/* <!-- </div> --> */}
         </div>
       </div>
     );

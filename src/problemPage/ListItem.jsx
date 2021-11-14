@@ -1,10 +1,10 @@
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { browserHistory, Redirect, useParams } from "react-router";
 import React from "react";
-import Header from "./Header";
-import ProblemSet from "./ProblemSet";
-import Footer from "./Footer";
-import Home from "./Home";
+import Header from "../Header";
+import ProblemSet from "../ProblemList/ProblemSet";
+import Footer from "../Footer";
+import Home from "../Home/Home";
 
 function ListItem({ sno, name, difficulty, submission }) {
   var o;
@@ -35,7 +35,7 @@ function ListItem({ sno, name, difficulty, submission }) {
     >
       <td> {sno}</td>
       <td style={{ textAlign: "left" }}>
-        <Link to={"000" + sno} style={{ color: "black" }}>
+        <Link to={"problemset/000" + sno} style={{ color: "black" }}>
           {name}
         </Link>
       </td>

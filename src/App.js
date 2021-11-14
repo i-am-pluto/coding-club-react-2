@@ -7,8 +7,10 @@ import {
   Redirect,
 } from "react-router-dom";
 import Header from "./Header";
-import "./assets/bootstrap/css/bootstrap.min.css";
+import Blog from "./Blog/Blog";
+// import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap";
+import "./assets/bootstrap/css/bootstrap.min.css";
 import "./assets/fonts/font-awesome.min.css";
 import "./assets/fonts/ionicons.min.css";
 import "./assets/css/Footer-Basic.css";
@@ -17,9 +19,11 @@ import "./assets/css/Simple-Slider.css";
 import "./assets/css/Social-Icons.css";
 import "./assets/css/Navigation-with-Search.css";
 import "./assets/css/styles.css";
-import Home from "./Home";
+import Home from "./Home/Home";
 import Footer from "./Footer";
-import ProblemSet from "./ProblemSet";
+import ProblemSet from "./ProblemList/ProblemSet";
+import Problem from "./problemPage/Problem";
+import BlogHome from "./Blog/BlogHome";
 function App() {
   return (
     // <h1>Hi</h1>
@@ -30,9 +34,7 @@ function App() {
           <Route exact path="/hostcontest"></Route>
           <Route exact path="/joincontest"></Route>
           <Route exact path="/learning"></Route>
-          <Route exact path="/blog"></Route>
           <Route exact path="/problemset">
-            
             <ProblemSet />
             <Footer />
           </Route>
@@ -43,6 +45,21 @@ function App() {
           <Route exact path="/home">
             <Header active={1} />
             <Home />
+            <Footer />
+          </Route>
+          <Route exact path="/coderhub">
+            <Header active={0} />
+            <BlogHome />
+            <Footer />
+          </Route>
+          <Route path="/problemset/:problemId">
+            <Header active={0} />
+            <Problem />
+            <Footer />
+          </Route>
+          <Route path="/coderHub/:blogId">
+            <Header active={0} />
+            <Blog />
             <Footer />
           </Route>
           <Route exact path="/">

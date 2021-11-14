@@ -1,8 +1,8 @@
 import React from "react";
-import coding from "./assets/img/coding.png";
-import problem from "./assets/img/problem.png";
-import py from "./assets/img/python-and-flask-free-udemy-course.jpg";
-import suc from "./assets/img/success.png";
+import coding from "../assets/img/coding.png";
+import problem from "../assets/img/problem.png";
+import py from "../assets/img/python-and-flask-free-udemy-course.jpg";
+import suc from "../assets/img/success.png";
 import Callender from "./Callender";
 
 function Home() {
@@ -189,7 +189,7 @@ function Home() {
                 <strong>Blog</strong>
               </span>
             </div>
-            <a href="#" style={{ marginLeft: "17px" }}>
+            <a href="/coderHub" style={{ marginLeft: "17px" }}>
               Go to our blog
             </a>
             <p></p>

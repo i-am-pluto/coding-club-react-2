@@ -10,7 +10,7 @@ function ProblemSetHeader2() {
         <span style={{ textDecoration: "underline" }}>
           Problem Set{" "}
           <button
-            className="btn bt</div>n-outline-secondary"
+            className="btn btn-outline-secondary"
             href="#"
             style={{ color: "rgb(0, 0, 0)", borderRadius: "10px" }}
           >

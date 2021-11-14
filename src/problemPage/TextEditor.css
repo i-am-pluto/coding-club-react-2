@@ -1,0 +1,19 @@
+.CodeMirror {
+  height: 800px;
+}
+:global .ControlledEditor {
+  /* Set height, width, borders, and global font properties here */
+  font-family: monospace;
+  height: 41000px;
+  color: black;
+  direction: ltr;
+}
+#Editor {
+  height: 100%;
+}
+.code-mirror-wrapper {
+  height: 100%;
+}
+.CodeMirror .cm-s-material .CodeMirror-wrap {
+  height: 100%;
+}
