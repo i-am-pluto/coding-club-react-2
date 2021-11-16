@@ -1,7 +1,4 @@
-import React from "react";
-import { Component } from "react";
-import divide from "../assets/img/—Pngtree—proportional thick straight line_5487827.png";
-import AceEditor from "react-ace";
+import React, { useEffect, useState } from "react";
 import "./problem.css";
 import TextEditor from "./TextEditor";
 import "ace-builds/src-noconflict/mode-text";
@@ -10,90 +7,124 @@ import { useParams } from "react-router";
 import "../ProblemList/problemData";
 import problemData from "../ProblemList/problemData";
 import "./problem.css";
+import Loading from "../loading/Loading";
+
 function Problem() {
   const problemId = useParams();
-  // console.log(problemId.problemId);
-  const thisProblem = problemData.find(
-    (problem) => problem.sno == problemId.problemId
-  );
-  // console.log(thisProblem);
-  var examples = thisProblem.example;
-  var temp = new Array();
-  for (var i = 0; i < 2; i++) {
-    let t = (
-      <div key={i} style={{ marginTop: "22px" }}>
-        Example {i}
-        <pre>
-          <code>
-            <strong>INPUT:-</strong> {examples[i].input}
-            <br />
-            <strong>OUTPUT:-</strong> {examples[i].output}
-          </code>
-        </pre>
-      </div>
+  const [problem, setProblem] = useState(null);
+  useEffect(() => {
+    const request = new Request(
+      `http://localhost:8080/problemset/${problemId.problemId}`,
+      {
+        method: "GET",
+        mode: "cors",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
     );
-    temp.push(t);
+    fetch(request)
+      .then((Response) => {
+        return Response.json();
+      })
+      .then(setProblem);
+  }, []);
+  // console.log(problem);
+
+  function loadProblem() {
+    if (problem === null) {
+      <Loading />;
+    } else {
+      const examples = problem.examples;
+      let o;
+      if (problem.diff == 1) {
+        o = {
+          color: "green",
+          diff: "Easy",
+        };
+      } else if (problem.diff == 2) {
+        o = {
+          color: "#ff8a14",
+          diff: "Medium",
+        };
+      } else {
+        o = {
+          color: "darkred",
+          diff: "Hard",
+        };
+      }
+      return (
+        <div className="" style={{ width: "100%", marginRight: "0px" }}>
+          <div className="card-body">
+            <h4 className="card-tthisProblemitle" id="Title">
+              {problem.sno}. <strong>{problem.title}</strong>
+            </h4>
+            <h6
+              className="card-subtitle mb-4"
+              id="Difficulty"
+              style={{ color: o.color }}
+            >
+              {o.diff}
+            </h6>
+            <p className="card-text" id="ProblemStatement">
+              {problem.statement}
+            </p>
+            <div class="progress">
+              <div
+                class="progress-bar"
+                role="progressbar"
+                style={{ width: problem.submissions / 1000 }}
+                aria-valuenow={problem.submissions}
+                aria-valuemin="0"
+                aria-valuemax="100000"
+              >
+                {problem.submissions}
+              </div>
+            </div>
+            {examples.map((example, i) => {
+              return (
+                <div key={i} style={{ marginTop: "22px" }}>
+                  Example {i + 1}
+                  <pre>
+                    <code>
+                      <strong>INPUT:-</strong> {example.input}
+                      <br />
+                      <strong>OUTPUT:-</strong> {example.output}
+                    </code>
+                  </pre>
+                </div>
+              );
+            })}
+            <a className="card-link" href="#">
+              Blog
+            </a>
+            <a className="card-link" href="#">
+              Discussion
+            </a>
+          </div>
+        </div>
+      );
+    }
   }
-  var o;
-  if (thisProblem.diff == 1) {
-    o = {
-      color: "green",
-      diff: "Easy",
-    };
-  } else if (thisProblem.diff == 2) {
-    o = {
-      color: "#ff8a14",
-      diff: "Medium",
-    };
-  } else {
-    o = {
-      color: "darkred",
-      diff: "Hard",
-    };
+
+  function loadTextEditor() {
+    if (problem === null) {
+      return <Loading />;
+    } else {
+      return (
+        <div className="col-md-5" id="right">
+          <TextEditor QuestionId={problemId.problemId} />
+        </div>
+      );
+    }
   }
 
   return (
     <div>
       <div>
-        {/* {this.draggable()} */}
         <div className="row">
           <div className="col-md-6" id="left">
-            <div className="" style={{ width: "100%", marginRight: "0px" }}>
-              <div className="card-body">
-                <h4 className="card-tthisProblemitle" id="Title">
-                  {thisProblem.sno}. <strong>{thisProblem.name}</strong>
-                </h4>
-                <h6
-                  className="card-subtitle mb-4"
-                  id="Difficulty"
-                  style={{ color: o.color }}
-                >
-                  {o.diff}
-                </h6>
-                <p className="card-text" id="ProblemStatement">
-                  {thisProblem.statement}
-                </p>
-                <div className="progress" id="Submissions">
-                  <div
-                    className="progress-bar"
-                    aria-valuenow={thisProblem.submission}
-                    aria-valuemin="0"
-                    aria-valuemax="100"
-                    style={{ width: " 50%" }}
-                  >
-                    {thisProblem.submission + "%"} accepted
-                  </div>
-                </div>
-                {temp}
-                <code></code>
-                <a className="card-link" href="#">
-                  Blog
-                </a>
-                <a className="card-link" href="#">
-                  Discussion
-                </a>
-              </div>
-            </div>
+            {loadProblem()}
           </div>
           <div
             className="col-sm-1"
@@ -104,9 +135,7 @@ function Problem() {
               backgroundColor: "#d1e7dd",
             }}
           ></div>
-          <div className="col-md-5" id="right">
-            <TextEditor QuestionId={thisProblem.sno} />
-          </div>
+          {loadTextEditor()}
         </div>
         <div
           className="row"

@@ -1,14 +1,32 @@
-import React, { Component } from "react";
 import ProblemList from "./problemList";
 import ProblemSetHeader2 from "./ProblemSetHeader2";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Header from "../Header";
-import Problem from "../problemPage/Problem";
-import { useHistory, HashRouter } from "react-router-dom";
-import problemData from "./problemData";
-
+import "./ProblemSet.css";
+import { useEffect, useState } from "react";
+import Loading from "../loading/Loading";
 function ProblemSet() {
-  const problems = problemData;
+  const [problem, setProblem] = useState(null);
+  useEffect(() => {
+    let request = new Request(`http://localhost:8080/problemset`, {
+      method: "GET",
+      mode: "cors",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    fetch(request)
+      .then((Response) => {
+        return Response.json();
+      })
+      .then(setProblem);
+  }, []);
+
+  function problemState() {
+    if (problem === null) {
+      return <Loading />;
+    } else return <ProblemList problems={problem} />;
+  }
+  console.log(problem);
   return (
     <div>
       <div>
@@ -16,7 +34,11 @@ function ProblemSet() {
         <div>
           <div className="container">
             <ProblemSetHeader2 />
-            <ProblemList problems={problems} />
+            {/* <ProblemList problems={problem} /> */}
+            {problemState()}
+            <a href="/addaproblem" className="floating">
+              <i class="fa fa-plus my-float"></i>
+            </a>
           </div>
         </div>
       </div>

@@ -95,31 +95,25 @@ class ProblemList extends React.Component {
     this.setState({
       listObject: newState,
     });
-    // this.listRef.current.
   }
 
   generateList() {
-    // var x = <ListItem />;
-    // console.log(x);
     let problems = new Array();
     for (var i = 0; i < this.state.listObject.length; i++) {
+      console.log("hi");
       var t = (
         <ListItem
           sno={this.state.listObject[i].sno}
-          name={this.state.listObject[i].name}
+          problemId={this.state.listObject[i].problemId}
+          name={this.state.listObject[i].title}
           difficulty={this.state.listObject[i].diff}
-          submission={this.state.listObject[i].submission}
+          submission={this.state.listObject[i].submissions}
           key={i}
         />
       );
       problems.push(t);
     }
-    // console.log(problems);
     return <tbody ref={this.listRef}>{problems}</tbody>;
-    // <listItem/>
-    // <listItem/>
-    // <listItem/>
-    // <listItem/>
   }
   render() {
     return (

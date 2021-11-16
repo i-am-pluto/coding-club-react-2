@@ -1,7 +1,7 @@
 export default [
   {
     id: "000001",
-    Title: "Assholes are very big",
+    Title: "#BLOGGERS",
     Sypnosis:
       "Tempor aliquip duis anim officia culpa incididunt aliqua id Lorem.",
     Tags: ["Algorithm", "Data Structures", "Array", "Competitive Programming"],
@@ -11,7 +11,7 @@ export default [
   },
   {
     id: "000002",
-    Title: "Assholes are very big",
+    Title: "#BLOGGERS",
     Tags: ["Algorithm", "Data Structures", "Array", "Competitive Programming"],
     Path: "./Blogs/000002.txt",
     Thumbnail: undefined,
@@ -21,7 +21,7 @@ export default [
   },
   {
     id: "000003",
-    Title: "Assholes are very big",
+    Title: "#BLOGGERS",
     Tags: ["Algorithm", "Data Structures", "Array", "Competitive Programming"],
     Path: "./Blogs/000003.txt",
     Thumbnail: undefined,
@@ -31,7 +31,7 @@ export default [
   },
   {
     id: "000004",
-    Title: "Assholes are very big",
+    Title: "#BLOGGERS",
     Tags: ["Algorithm", "Data Structures", "Array", "Competitive Programming"],
     Path: "./Blogs/000004.txt",
     Thumbnail: undefined,
@@ -41,7 +41,7 @@ export default [
   },
   {
     id: "000005",
-    Title: "Assholes are very big",
+    Title: "#BLOGGERS",
     Tags: ["Algorithm", "Data Structures", "Array", "Competitive Programming"],
     Path: "./Blogs/000005.txt",
     Thumbnail: undefined,
@@ -51,7 +51,7 @@ export default [
   },
   {
     id: "000006",
-    Title: "Assholes are very big",
+    Title: "#BLOGGERS",
     Tags: ["Algorithm", "Data Structures", "Array", "Competitive Programming"],
     Path: "./Blogs/000006.txt",
     Thumbnail: undefined,
@@ -61,7 +61,7 @@ export default [
   },
   {
     id: "000007",
-    Title: "Assholes are very big",
+    Title: "#BLOGGERS",
     Tags: ["Algorithm", "Data Structures", "Array", "Competitive Programming"],
     Path: "./Blogs/000007.txt",
     Thumbnail: undefined,

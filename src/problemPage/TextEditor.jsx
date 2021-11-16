@@ -14,8 +14,8 @@ import { Controlled as ControlledEditor } from "react-codemirror2";
 function TextEditor({ QuestionId }) {
   let [value, setValue] = useState("// hello");
   let [lang, setLang] = useState("text/x-csrc");
+
   function setlang(e) {
-    console.log("here");
     switch (e.target.value) {
       case "1":
         //cpp
@@ -33,11 +33,12 @@ function TextEditor({ QuestionId }) {
       default:
         break;
     }
-    // console.log(lang);
   }
+
   function clearEditor() {
     setValue("");
   }
+
   function handleSubmit() {
     let l;
     switch (lang) {
@@ -52,7 +53,6 @@ function TextEditor({ QuestionId }) {
       case "python":
         l = "python";
         break;
-
     }
 
     const submission = {
@@ -60,16 +60,18 @@ function TextEditor({ QuestionId }) {
       problemId: QuestionId,
       language: l,
       code: value,
+      //find a way
+      userId: undefined,
     };
 
-    fetch(`/${QuestionId}/Submission`, {
+    fetch(`http://localhost:8080/${QuestionId}/Submission`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(submission),
-    }).then(() => {
-      console.log("The Code Was Submitted");
+    }).then((Response) => {
+      console.log(Response.statusText);
     });
   }
 

@@ -1,12 +1,7 @@
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import { browserHistory, Redirect, useParams } from "react-router";
-import React from "react";
-import Header from "../Header";
-import ProblemSet from "../ProblemList/ProblemSet";
-import Footer from "../Footer";
-import Home from "../Home/Home";
+import React, { useEffect, useState } from "react";
 
-function ListItem({ sno, name, difficulty, submission }) {
+function ListItem({ sno, problemId, name, difficulty, submission }) {
   var o;
   if (difficulty == 1) {
     o = {
@@ -26,7 +21,7 @@ function ListItem({ sno, name, difficulty, submission }) {
   }
   // console.log(escape(name));
   let d = String(name);
-  // let { id } = useParams();
+  console.log("hi");
   return (
     // <p>hi</p>
     <tr
@@ -35,7 +30,7 @@ function ListItem({ sno, name, difficulty, submission }) {
     >
       <td> {sno}</td>
       <td style={{ textAlign: "left" }}>
-        <Link to={"problemset/000" + sno} style={{ color: "black" }}>
+        <Link to={"problemset/" + problemId} style={{ color: "black" }}>
           {name}
         </Link>
       </td>
@@ -44,7 +39,5 @@ function ListItem({ sno, name, difficulty, submission }) {
     </tr>
   );
 }
-// http://localhost:3000/problemset/The%20Skyline%20Problem
+
 export default ListItem;
-// http://localhost:3000/problemset/problemset/problemset/problemset/3sum
-// http://localhost:3000/problemset/The%20Skyline%20Problem

@@ -43,7 +43,10 @@ function Header({ active }) {
         }}
       >
         <div className="container">
-          <a className="navbar-brand" href="#">
+          <a
+            className="navbar-brand"
+            href="https://www.youtube.com/watch?v=BT9h5ifR1tY"
+          >
             Coding Club
           </a>
           <button

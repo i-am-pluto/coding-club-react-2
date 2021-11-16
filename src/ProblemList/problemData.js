@@ -9,6 +9,7 @@ export default [
     example: [
       { input: "[2,3,5,1,23,4,5,2]", output: "POSSIBLE" },
       { input: "[2,3,5,1,23,4,5,2]", output: "POSSIBLE" },
+      { input: "[2,3,5,1,23,4,5,2]", output: "POSSIBLE" },
     ],
   },
   {

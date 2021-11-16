@@ -24,6 +24,7 @@ import Footer from "./Footer";
 import ProblemSet from "./ProblemList/ProblemSet";
 import Problem from "./problemPage/Problem";
 import BlogHome from "./Blog/BlogHome";
+import AddAProblem from "./ProblemList/AddAProblem";
 function App() {
   return (
     // <h1>Hi</h1>
@@ -55,6 +56,11 @@ function App() {
           <Route path="/problemset/:problemId">
             <Header active={0} />
             <Problem />
+            <Footer />
+          </Route>
+          <Route path="/addaproblem">
+            <Header active={0} />
+            <AddAProblem />
             <Footer />
           </Route>
           <Route path="/coderHub/:blogId">

@@ -8,31 +8,31 @@ function Login() {
   return (
     <div>
       <form style={{}}>
-        <div class="form-group e">
+        <div className="form-group e">
           <label for="Email">Email address</label>
           <input
             type="email"
-            class="form-control"
+            className="form-control"
             id="Email"
             placeholder="Enter email"
           />
         </div>
-        <div class="form-group e">
+        <div className="form-group e">
           <label for="Pass">Password</label>
           <input
             type="password"
-            class="form-control"
+            className="form-control"
             id="Pass"
             placeholder="Password"
           />
         </div>
-        <div class="form-group form-check e">
-          <input type="checkbox" class="form-check-input" id="exampleCheck1" />
-          <label class="form-check-label" for="exampleCheck1">
+        <div className="form-group form-check e">
+          <input type="checkbox" className="form-check-input" id="exampleCheck1" />
+          <label className="form-check-label" for="exampleCheck1">
             <em>Terms</em>
           </label>
         </div>
-        <button type="submit" class="btn btn-success e">
+        <button type="submit" className="btn btn-success e">
           Login
         </button>
       </form>

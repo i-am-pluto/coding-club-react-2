@@ -37,9 +37,7 @@ function Footer() {
           <p className="copyright">Coding Club © 2021</p>
         </footer>
       </footer>
-      {/* <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.4.8/swiper-bundle.min.js"></script>
-      <script src="assets/js/Simple-Slider.js"></script> */}
+      
     </div>
   );
 }
