@@ -21,7 +21,7 @@ class ProblemList extends React.Component {
     } else if (a == 2) {
       //problems
       for (var i = 0; i < arr.length - 1; i++) {
-        if (arr[i].name.toLowerCase() > arr[i + 1].name.toLowerCase()) {
+        if (arr[i].title.toLowerCase() > arr[i + 1].title.toLowerCase()) {
           return false;
         }
       }
@@ -64,7 +64,7 @@ class ProblemList extends React.Component {
       newState.reverse();
     } else
       newState.sort(function (a, b) {
-        var temp = a.name.toLowerCase() > b.name.toLowerCase();
+        var temp = a.title.toLowerCase() > b.title.toLowerCase();
         return temp ? 1 : -1;
       });
     this.setState({

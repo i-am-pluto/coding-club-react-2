@@ -258,7 +258,7 @@ function AddAProblem() {
               onClick={handleSubmit}
               className="btn btn-outline-success"
               id="submitButton"
-              // {...disable}
+              {...disable}
             >
               Submit
             </button>

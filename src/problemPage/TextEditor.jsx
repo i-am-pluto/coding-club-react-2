@@ -39,7 +39,8 @@ function TextEditor({ QuestionId }) {
     setValue("");
   }
 
-  function handleSubmit() {
+  function handleSubmit(e) {
+    e.preventDefault();
     let l;
     switch (lang) {
       case "text/x-csrc":
@@ -63,9 +64,10 @@ function TextEditor({ QuestionId }) {
       //find a way
       userId: undefined,
     };
-
-    fetch(`http://localhost:8080/${QuestionId}/Submission`, {
+    console.log(JSON.stringify(submission));
+    fetch(`http://localhost:8080/${QuestionId}/submission`, {
       method: "POST",
+      mode: "cors",
       headers: {
         "Content-Type": "application/json",
       },
