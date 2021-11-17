@@ -61,8 +61,7 @@ function TextEditor({ QuestionId }) {
       problemId: QuestionId,
       language: l,
       code: value,
-      //find a way
-      userId: undefined,
+      userId: null,
     };
     console.log(JSON.stringify(submission));
     fetch(`http://localhost:8080/${QuestionId}/submission`, {
