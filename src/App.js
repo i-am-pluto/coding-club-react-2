@@ -25,6 +25,7 @@ import ProblemSet from "./ProblemList/ProblemSet";
 import Problem from "./problemPage/Problem";
 import BlogHome from "./Blog/BlogHome";
 import AddAProblem from "./ProblemList/AddAProblem";
+import Submission from "./submission/Submission";
 function App() {
   return (
     // <h1>Hi</h1>
@@ -66,6 +67,11 @@ function App() {
           <Route path="/coderHub/:blogId">
             <Header active={0} />
             <Blog />
+            <Footer />
+          </Route>
+          <Route path="/submission/:submissionId">
+            <Header active={0} />
+            <Submission />
             <Footer />
           </Route>
           <Route exact path="/">
